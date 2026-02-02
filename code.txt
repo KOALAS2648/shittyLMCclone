@@ -1,0 +1,30 @@
+code = readFile("g.txt")
+main_functions = {"INP":901, "OUT":902, "HLT":"000", "STA":300, "DAT":"0", "BRA":600, "BRZ":700, "BRP":800, "ADD":100, "SUB":200, "LDA":500, "OTC":400}
+drqInput = ["INP", "OUT", "HLT"]
+
+loops = ["BRA", "BRP", "BRZ"]
+memory = [0 for i in range(0,99)]
+
+getLabels(code, main_functions)
+getVariables(code, main_functions)
+for index, line in enumerate(code):
+
+    if line[0] in loops:
+        labelname = line[-1]
+        line[-1] = labelsDict[labelname]
+
+    if line[-1] in variablesDict:
+        varname = line[-1]
+        line[-1] = variablesDict[varname]
+    if line[0] == "OTC":
+        memory[index] = main_functions["OTC"]
+        continue
+    if line[0] in main_functions:
+        if line[0] in drqInput:
+            memory[index] = main_functions[line[0]]
+        else:
+            memory[index] =main_functions[line[0]]+line[-1]
+
+print(memory)
+print(labelsDict)
+print(variablesDict)
