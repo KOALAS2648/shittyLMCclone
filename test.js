@@ -1,6 +1,6 @@
 labelsDict = {};
 function getLabels(code, main_functions){
-    for (var index=0; i <code.length; i++){
+    for (var index=0; index <code.length; i++){
         var line = code[line];
         if (line[0] in main_functions){
 
@@ -14,7 +14,7 @@ function getLabels(code, main_functions){
 
 variablesDict = {};
 function getVariables(code, main_functions){
-    for (var index=0; i <code.length; i++){
+    for (var index=0; index <code.length; i++){
         if (line[0] in main_functions){
             
         }
