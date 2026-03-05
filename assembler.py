@@ -44,7 +44,7 @@ def getVariables(code, main_functions):
 def assemble(codeFile):
     code = readFile(codeFile)
     main_functions = {"INP":901, "OUT":902, "HLT":"000", "STA":300, "DAT":"0", "BRA":600, "BRZ":700, "BRP":800, "ADD":100, "SUB":200, "LDA":500, "OTC":400}
-    drqInput = ["INP", "OUT", "HLT"]
+    drqInput = ["INP", "OUT", "HLT", "OTC"]
 
 
 
