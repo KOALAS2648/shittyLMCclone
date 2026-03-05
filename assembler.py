@@ -62,9 +62,6 @@ def assemble(codeFile):
         if line[-1] in variablesDict:
             varname = line[-1]
             line[-1] = variablesDict[varname]
-        if line[0] == "OTC":
-            memory[index] = main_functions["OTC"]
-            continue
         if line[0] in main_functions:
             if line[0] in drqInput:
                 memory[index] = main_functions[line[0]]
