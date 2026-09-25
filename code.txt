@@ -1,4 +1,4 @@
-       LDA space
+        LDA space
         STA char
 loop    LDA char
         OTC
